@@ -6,11 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    {% comment %} add bootstrap link {% endcomment %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>This is the home page of first app</h1>
+    <h1>{{text_1}}</h1>
     <h2>Here is the list of users</h2>
     
     <!-- show all context -->
@@ -19,8 +21,48 @@
         <li>{{ user }}</li>
         {% endfor %}
     </ul>
+    {% comment %} show all data from db by table {% endcomment %}
 
-    <img src="{% static 'images/cimg.png' %}" alt="">
+    {% comment %} make the table border {% endcomment %}
+    <table class="table table-bordered">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Instrument</th>
+        </tr>
+        {% for user in musician %}
+        <tr>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.instrument }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% comment %} Make another table for album {% endcomment %}
+    <table class="table table-bordered">
+        <tr>
+            <th>Artist</th>
+            <th>AlbumName</th>
+            <th>ReleaseDate</th>
+            <th>Starts</th>
+        </tr>
+        {% for album in album %}
+        <tr>
+            <td>{{ album.artist }}</td>
+            <td>{{ album.name }}</td>
+            <td>{{ album.release_date }}</td>
+            <td>{{ album.num_stars }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+    {% comment %} <img src="{% static 'images/cimg.png' %}" alt=""> {% endcomment %}
+    {% comment %} add bootstrap script {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
 </body>
 
 </html>

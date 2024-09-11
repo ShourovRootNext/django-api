@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h3>This Form is created by HTML code</h3>
+        <form action="" method="POST" class="form-group">
+            {% csrf_token %}
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name">
+            <br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name">
+            <br>
+            <label for="instrument">Instrument:</label>
+            <input type="text" name="instrument" id="instrument">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <h3>{{heading_1}}</h3>
+        <form action="" method="POST" class="form-group">
+            {% csrf_token %}
+            {{test_form}}
+        </form>
+
+        
+        <script src="" async defer></script>
+    </body>
+</html>
