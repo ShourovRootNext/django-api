@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This is the home page of first app</h1>
+    <h2>Here is the list of users</h2>
+    
+    <!-- show all context -->
+    <ul>
+        {% for user in names %}
+        <li>{{ user }}</li>
+        {% endfor %}
+    </ul>
+
+    <img src="{% static 'images/cimg.png' %}" alt="">
+</body>
+
+</html>
